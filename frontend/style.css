@@ -1,0 +1,236 @@
+:root {
+  --bg: #070b17;
+  --panel: rgba(16, 22, 40, 0.84);
+  --panel-border: rgba(130, 154, 255, 0.24);
+  --text: #e8eeff;
+  --muted: #a4b3df;
+  --primary: #6f8cff;
+  --primary-2: #53d5ff;
+  --danger: #ff6c8f;
+  --success: #63efb0;
+  --meter: linear-gradient(90deg, #53d5ff, #6f8cff, #a879ff);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Manrope", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 10% 20%, #1a2a55 0%, transparent 45%),
+    radial-gradient(circle at 90% 10%, #321f66 0%, transparent 40%),
+    var(--bg);
+}
+
+.app-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: radial-gradient(circle at center, black 50%, transparent 95%);
+}
+
+.container {
+  width: min(1000px, 92vw);
+  margin: 40px auto 50px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  margin-bottom: 22px;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #b7c5ff;
+  background: rgba(111, 140, 255, 0.14);
+  border: 1px solid rgba(111, 140, 255, 0.35);
+  border-radius: 999px;
+  padding: 7px 12px;
+}
+
+h1 {
+  margin: 14px 0 8px;
+  font-size: clamp(2rem, 3.2vw, 3rem);
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  max-width: 760px;
+}
+
+.panel {
+  border-radius: 18px;
+  padding: 24px;
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 18px 45px rgba(5, 8, 18, 0.4);
+}
+
+.input-label,
+.result-label {
+  font-size: 0.9rem;
+  color: #b7c5ff;
+}
+
+textarea {
+  width: 100%;
+  margin-top: 8px;
+  padding: 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(140, 160, 255, 0.3);
+  background: rgba(8, 13, 28, 0.8);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 1rem;
+  resize: vertical;
+  outline: none;
+}
+
+textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(111, 140, 255, 0.22);
+}
+
+.actions {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+button {
+  border: 0;
+  border-radius: 11px;
+  padding: 11px 16px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), #8b63ff);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(111, 140, 255, 0.4);
+}
+
+button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid rgba(132, 149, 220, 0.4);
+  border-top-color: var(--primary-2);
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.error {
+  margin-top: 14px;
+  border: 1px solid rgba(255, 108, 143, 0.45);
+  background: rgba(255, 108, 143, 0.12);
+  color: #ffd4de;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.results {
+  margin-top: 20px;
+  border-top: 1px solid rgba(145, 165, 255, 0.2);
+  padding-top: 18px;
+}
+
+.result-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin: 10px 0;
+}
+
+.badge,
+.provider {
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-weight: 700;
+  font-size: 0.84rem;
+  text-transform: capitalize;
+}
+
+.badge {
+  background: rgba(97, 239, 176, 0.16);
+  color: #adffd8;
+  border: 1px solid rgba(97, 239, 176, 0.55);
+}
+
+.provider {
+  background: rgba(83, 213, 255, 0.13);
+  color: #a9efff;
+  border: 1px solid rgba(83, 213, 255, 0.45);
+}
+
+.intensity-value {
+  color: #d8e2ff;
+  font-weight: 700;
+}
+
+.meter-track {
+  width: 100%;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(119, 140, 200, 0.22);
+  overflow: hidden;
+}
+
+.meter-fill {
+  width: 0%;
+  height: 100%;
+  background: var(--meter);
+  transition: width 0.45s ease;
+}
+
+audio {
+  width: 100%;
+  margin-top: 14px;
+}
+
+@media (max-width: 640px) {
+  .panel {
+    padding: 18px;
+  }
+}

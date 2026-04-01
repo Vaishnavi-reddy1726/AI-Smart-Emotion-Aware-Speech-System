@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Empathy Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-bg"></div>
+    <main class="container">
+      <section class="hero">
+        <p class="tag">Emotionally Intelligent Voice AI</p>
+        <h1>The Empathy Engine</h1>
+        <p class="subtitle">
+          Transform plain text into expressive, human-like speech with emotion-aware delivery.
+        </p>
+      </section>
+
+      <section class="panel">
+        <label for="inputText" class="input-label">Your text</label>
+        <textarea
+          id="inputText"
+          placeholder="Write something heartfelt, motivational, calm, or dramatic..."
+          rows="7"
+        ></textarea>
+
+        <div class="actions">
+          <button id="generateBtn">Generate Voice</button>
+          <div id="loading" class="loading hidden">
+            <span class="spinner"></span>
+            <span>Analyzing emotion and generating audio...</span>
+          </div>
+        </div>
+
+        <div id="errorBox" class="error hidden"></div>
+
+        <div id="results" class="results hidden">
+          <div class="result-row">
+            <span class="result-label">Detected Emotion</span>
+            <span id="emotionBadge" class="badge">neutral</span>
+          </div>
+
+          <div class="result-row meter-row">
+            <span class="result-label">Intensity</span>
+            <span id="intensityValue" class="intensity-value">0%</span>
+          </div>
+          <div class="meter-track">
+            <div id="intensityFill" class="meter-fill"></div>
+          </div>
+
+          <div class="result-row">
+            <span class="result-label">Voice Provider</span>
+            <span id="providerBadge" class="provider">pyttsx3</span>
+          </div>
+
+          <audio id="audioPlayer" controls></audio>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

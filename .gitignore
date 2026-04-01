@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+
+# Virtual env
+.venv/
+venv/
+env/
+
+# Environment variables
+backend/.env
+.env
+
+# Generated audio
+backend/audio/*
+
+# IDE/system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

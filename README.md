@@ -1,8 +1,8 @@
-The Empathy Engine - Emotionally Intelligent Voice AI
+AI-Smart-Emotion-Aware-Speech-System
 
 Project Overview
 
-I built The Empathy Engine as a full-stack web app that converts plain text into expressive, emotion-aware speech.  
+I built this as a full-stack web app that converts plain text into expressive, emotion-aware speech.  
 The app detects emotion and intensity from text, maps those signals to voice behavior, generates audio, and plays it instantly in the browser.
 
 Main Features

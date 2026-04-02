@@ -1,13 +1,12 @@
 The Empathy Engine - Emotionally Intelligent Voice AI
-======================================================
 
 Project Overview
-----------------
+
 I built The Empathy Engine as a full-stack web app that converts plain text into expressive, emotion-aware speech.  
 The app detects emotion and intensity from text, maps those signals to voice behavior, generates audio, and plays it instantly in the browser.
 
 Main Features
--------------
+
 - Emotion-aware text-to-speech from a clean web interface
 - Transformer model for emotion detection: `j-hartmann/emotion-english-distilroberta-base`
 - Target emotions:
@@ -25,7 +24,7 @@ Main Features
 - Modular FastAPI backend with static audio serving
 
 Project Structure
------------------
+
 ```text
 empathy-engine/
 |
@@ -47,7 +46,7 @@ empathy-engine/
 ```
 
 How It Works
-------------
+
 1. User enters text in the web app.
 2. Frontend sends `POST /generate`.
 3. Backend runs transformer inference to detect emotion and intensity.
@@ -57,7 +56,7 @@ How It Works
 7. Frontend updates UI and starts playback.
 
 Emotion to Voice Mapping
-------------------------
+
 - Joy
   - faster speaking rate
   - higher pitch
@@ -78,7 +77,7 @@ Emotion to Voice Mapping
 Intensity scaling makes output more expressive for stronger emotional confidence.
 
 API Usage
----------
+
 Endpoint: `POST /generate`
 
 Request body
@@ -104,7 +103,7 @@ Notes
 - `provider` shows which TTS engine produced the file
 
 Installation and Run
---------------------
+
 1) Clone and enter project
 ```bash
 git clone <your-repo-url>
